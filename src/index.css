@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Avenir LT Std", sans-serif;
+}
+
+@font-face {
+  font-family: "Namashte";
+  src:  url("./fonts/Namashte.woff2") format("woff2"),
+        url("./fonts/Namashte.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Namashte';
+  src: url('./fonts/Namashte.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: normal;
+}
+
+@layer components {
+  .sideBarIcon {
+    @apply relative flex items-center justify-center h-6 w-6 mx-auto
+     rounded-lg;
+  }
+
+  .sideBar-Tooltip {
+    @apply absolute w-auto px-4 py-2 m-2 min-w-max left-14 rounded shadow bg-bg-admin border-2
+    text-xs font-bold transition-all duration-100 scale-0 origin-left;
+  }
+}
+
+hr.zig,
+hr.zag {
+  border: none;
+  height: 30px;
+  width: 100%;
+  margin: 10 50px;
+}
+
+hr.zig {
+  background: linear-gradient(-135deg, #855256 20px, rgba(0, 0, 0, 0) 0) 0 5px,
+    linear-gradient(135deg, #855256 20px, rgba(0, 0, 0, 0) 0) 0 5px;
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: 30px 40px;
+  z-index: 100;
+  position: relative;
+}
+
+hr.zag {
+  background: linear-gradient(-135deg, white 20px, rgba(0, 0, 0, 0) 0) 0 5px,
+    linear-gradient(135deg, white 20px, #855256 0) 0 5px;
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: 30px 40px;
+  z-index: 50;
+  margin-top: -28px;
+}
+
+.zig-zag-top:before {
+  background: linear-gradient(
+      -45deg,
+      #855256 16px,
+      red 16px,
+      blue 16px,
+      transparent 0
+    ),
+    linear-gradient(45deg, #855256 16px, transparent 0);
+  background-position: left top;
+  background-repeat: repeat-x;
+  background-size: 30px 32px;
+  content: "";
+  display: block;
+
+  height: 32px;
+  width: 100%;
+
+  position: relative;
+  bottom: 32px;
+  left: 0;
+}
